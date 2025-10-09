@@ -1,0 +1,174 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "PohLang",
+  "scopeName": "source.pohlang",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#program-blocks"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#phrasal-expressions"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#variables"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.hash.pohlang",
+          "match": "#.*$"
+        },
+        {
+          "name": "comment.block.pohlang",
+          "begin": "#\\*",
+          "end": "\\*#"
+        }
+      ]
+    },
+    "program-blocks": {
+      "patterns": [
+        {
+          "name": "keyword.control.program.pohlang",
+          "match": "\\b(Start Program|End Program|End If|End While|End)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.pohlang",
+          "match": "\\b(If|Otherwise|While|Repeat|Break|Continue|Use|Make|Ask for|Import|Increase|Decrease)\\b"
+        },
+        {
+          "name": "keyword.other.pohlang",
+          "match": "\\b(Set|Write|with|to|and|or|not)\\b"
+        },
+        {
+          "name": "constant.language.pohlang",
+          "match": "\\b(true|false|null)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.pohlang",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pohlang",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.pohlang",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pohlang",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.decimal.pohlang",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.symbolic.pohlang",
+          "match": "\\+|\\-|\\*|\\/|\\%"
+        },
+        {
+          "name": "keyword.operator.comparison.symbolic.pohlang",
+          "match": "==|!=|<|>|<=|>="
+        },
+        {
+          "name": "keyword.operator.phrasal.pohlang",
+          "match": "\\b(plus|minus|times|divided by|is greater than|is less than|is equal to|is not equal to)\\b"
+        },
+        {
+          "name": "keyword.operator.assignment.pohlang",
+          "match": "\\bSet\\b|\\bto\\b|="
+        }
+      ]
+    },
+    "phrasal-expressions": {
+      "patterns": [
+        {
+          "name": "support.function.phrasal.math.pohlang",
+          "match": "\\b(total of|smallest in|largest in|absolute value of|round down|round up|round)\\b"
+        },
+        {
+          "name": "support.function.phrasal.string.pohlang",
+          "match": "\\b(make uppercase|make lowercase|trim spaces from)\\b"
+        },
+        {
+          "name": "support.function.phrasal.collection.pohlang",
+          "match": "\\b(first in|last in|reverse of|count of|join|with|split|by|contains|in|remove|from|append|to|insert|at)\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.pohlang",
+          "match": "\\b(Make)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s+(with)",
+          "captures": {
+            "1": {
+              "name": "keyword.other.pohlang"
+            },
+            "2": {
+              "name": "entity.name.function.pohlang"
+            },
+            "3": {
+              "name": "keyword.other.pohlang"
+            }
+          }
+        },
+        {
+          "name": "support.function.builtin.pohlang",
+          "match": "\\b(Write|Ask for|Import)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.pohlang",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    }
+  }
+}

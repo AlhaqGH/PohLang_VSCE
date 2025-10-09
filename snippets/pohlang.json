@@ -1,0 +1,288 @@
+{
+  "Program Block": {
+    "prefix": "program",
+    "body": [
+      "Start Program",
+      "\t${1:# program code}",
+      "End Program"
+    ],
+    "description": "Create a program block with Start/End Program"
+  },
+  "Make Function": {
+    "prefix": "func",
+    "body": [
+      "Make ${1:functionName} with ${2:param1}:",
+      "\t${3:# function body}",
+      "End"
+    ],
+    "description": "Create a new function (v0.5.2 syntax)"
+  },
+  "Make Function No Params": {
+    "prefix": "funcnoparams",
+    "body": [
+      "Make ${1:functionName}:",
+      "\t${2:# function body}",
+      "End"
+    ],
+    "description": "Create a function without parameters"
+  },
+  "Make Variable": {
+    "prefix": "make",
+    "body": [
+      "Make ${1:variableName} = ${2:value}"
+    ],
+    "description": "Create a new variable"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "If ${1:condition}:",
+      "\t${2:# code}",
+      "End If"
+    ],
+    "description": "If statement (v0.5.2)"
+  },
+  "If Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "If ${1:condition}:",
+      "\t${2:# if code}",
+      "Otherwise:",
+      "\t${3:# else code}",
+      "End If"
+    ],
+    "description": "If-else statement with Otherwise (v0.5.2)"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "While ${1:condition}:",
+      "\t${2:# loop body}",
+      "End While"
+    ],
+    "description": "While loop (v0.5.2)"
+  },
+  "Repeat Loop": {
+    "prefix": "repeat",
+    "body": [
+      "Repeat ${1:times}:",
+      "\t${2:# loop body}",
+      "End"
+    ],
+    "description": "Repeat loop N times"
+  },
+  "Write Statement": {
+    "prefix": "write",
+    "body": [
+      "Write \"${1:message}\""
+    ],
+    "description": "Write output (v0.5.2)"
+  },
+  "Ask For Input": {
+    "prefix": "ask",
+    "body": [
+      "Make ${1:variableName} = Ask for \"${2:prompt}\""
+    ],
+    "description": "Get user input (v0.5.2)"
+  },
+  "Import Module": {
+    "prefix": "import",
+    "body": [
+      "Import \"${1:module_name}\""
+    ],
+    "description": "Import a module"
+  },
+  "Addition Symbolic": {
+    "prefix": "add",
+    "body": [
+      "Make ${1:result} = ${2:a} + ${3:b}"
+    ],
+    "description": "Add two values (symbolic)"
+  },
+  "Addition Phrasal": {
+    "prefix": "addphrase",
+    "body": [
+      "Make ${1:result} = ${2:a} plus ${3:b}"
+    ],
+    "description": "Add two values (phrasal)"
+  },
+  "Subtraction Symbolic": {
+    "prefix": "sub",
+    "body": [
+      "Make ${1:result} = ${2:a} - ${3:b}"
+    ],
+    "description": "Subtract two values (symbolic)"
+  },
+  "Subtraction Phrasal": {
+    "prefix": "subphrase",
+    "body": [
+      "Make ${1:result} = ${2:a} minus ${3:b}"
+    ],
+    "description": "Subtract two values (phrasal)"
+  },
+  "Multiplication Symbolic": {
+    "prefix": "mul",
+    "body": [
+      "Make ${1:result} = ${2:a} * ${3:b}"
+    ],
+    "description": "Multiply two values (symbolic)"
+  },
+  "Multiplication Phrasal": {
+    "prefix": "mulphrase",
+    "body": [
+      "Make ${1:result} = ${2:a} times ${3:b}"
+    ],
+    "description": "Multiply two values (phrasal)"
+  },
+  "Division Symbolic": {
+    "prefix": "div",
+    "body": [
+      "Make ${1:result} = ${2:a} / ${3:b}"
+    ],
+    "description": "Divide two values (symbolic)"
+  },
+  "Division Phrasal": {
+    "prefix": "divphrase",
+    "body": [
+      "Make ${1:result} = ${2:a} divided by ${3:b}"
+    ],
+    "description": "Divide two values (phrasal)"
+  },
+  "Total Of": {
+    "prefix": "total",
+    "body": [
+      "Make ${1:result} = total of ${2:list}"
+    ],
+    "description": "Sum all elements in a list"
+  },
+  "Smallest In": {
+    "prefix": "smallest",
+    "body": [
+      "Make ${1:result} = smallest in ${2:list}"
+    ],
+    "description": "Find minimum value in list"
+  },
+  "Largest In": {
+    "prefix": "largest",
+    "body": [
+      "Make ${1:result} = largest in ${2:list}"
+    ],
+    "description": "Find maximum value in list"
+  },
+  "Make Uppercase": {
+    "prefix": "uppercase",
+    "body": [
+      "Make ${1:result} = make uppercase ${2:text}"
+    ],
+    "description": "Convert string to uppercase"
+  },
+  "Make Lowercase": {
+    "prefix": "lowercase",
+    "body": [
+      "Make ${1:result} = make lowercase ${2:text}"
+    ],
+    "description": "Convert string to lowercase"
+  },
+  "Trim Spaces": {
+    "prefix": "trim",
+    "body": [
+      "Make ${1:result} = trim spaces from ${2:text}"
+    ],
+    "description": "Remove leading/trailing spaces"
+  },
+  "First In": {
+    "prefix": "first",
+    "body": [
+      "Make ${1:result} = first in ${2:list}"
+    ],
+    "description": "Get first element of list"
+  },
+  "Last In": {
+    "prefix": "last",
+    "body": [
+      "Make ${1:result} = last in ${2:list}"
+    ],
+    "description": "Get last element of list"
+  },
+  "Count Of": {
+    "prefix": "count",
+    "body": [
+      "Make ${1:result} = count of ${2:list}"
+    ],
+    "description": "Get number of elements in list"
+  },
+  "Join With": {
+    "prefix": "join",
+    "body": [
+      "Make ${1:result} = join ${2:list} with \"${3:,}\""
+    ],
+    "description": "Join list elements with separator"
+  },
+  "Split By": {
+    "prefix": "split",
+    "body": [
+      "Make ${1:result} = split ${2:text} by \"${3:,}\""
+    ],
+    "description": "Split string by delimiter"
+  },
+  "Contains In": {
+    "prefix": "contains",
+    "body": [
+      "If contains ${1:item} in ${2:list}:",
+      "\t${3:# code}",
+      "End If"
+    ],
+    "description": "Check if item exists in list"
+  },
+  "Append To": {
+    "prefix": "append",
+    "body": [
+      "append ${1:item} to ${2:list}"
+    ],
+    "description": "Add item to end of list"
+  },
+  "Increase": {
+    "prefix": "increase",
+    "body": [
+      "Increase ${1:variable} by ${2:1}"
+    ],
+    "description": "Increment variable by value"
+  },
+  "Decrease": {
+    "prefix": "decrease",
+    "body": [
+      "Decrease ${1:variable} by ${2:1}"
+    ],
+    "description": "Decrement variable by value"
+  },
+  "Break": {
+    "prefix": "break",
+    "body": [
+      "Break"
+    ],
+    "description": "Exit loop early"
+  },
+  "Continue": {
+    "prefix": "continue",
+    "body": [
+      "Continue"
+    ],
+    "description": "Skip to next iteration"
+  },
+  "Comment": {
+    "prefix": "comment",
+    "body": [
+      "# ${1:comment text}"
+    ],
+    "description": "Single line comment"
+  },
+  "Block Comment": {
+    "prefix": "blockcomment",
+    "body": [
+      "#*",
+      " * ${1:comment text}",
+      " *#"
+    ],
+    "description": "Block comment"
+  }
+}

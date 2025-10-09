@@ -1,0 +1,22 @@
+# Development files to exclude
+.vscode/**
+.vscode-test/**
+.nyc_output/**
+coverage/**
+src/**
+tsconfig.json
+.eslintrc.json
+.gitignore
+**/*.map
+*.vsix
+README.old.md
+node_modules/**
+
+# These files WILL be included (negation rules)
+!icon.png
+!images/**
+!bin/**
+!examples/**
+!syntaxes/**
+!snippets/**
+!out/**

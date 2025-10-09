@@ -1,0 +1,54 @@
+Start Program
+
+// Test PohLang Hub Extension Features
+// This file tests syntax highlighting, snippets, and execution
+
+// 1. Variable declarations
+Make greeting = "Hello from PohLang Hub!"
+Make version = "0.1.0"
+Make isPublished = true
+
+// 2. Phrasal expressions (math)
+Make numbers = [1, 2, 3, 4, 5]
+Make sum = total of(numbers)
+Make largest = largest in(numbers)
+Make smallest = smallest in(numbers)
+
+// 3. String operations
+Make name = "pohlang"
+Make uppercase = make uppercase(name)
+Make message = join(["Extension", "v" plus version], " ")
+
+// 4. Output
+Write(greeting)
+Write("Sum of numbers: " plus sum)
+Write("Largest: " plus largest plus ", Smallest: " plus smallest)
+Write("Uppercase: " plus uppercase)
+Write(message)
+
+// 5. Conditional
+If sum is greater than 10
+    Write("Sum is large!")
+Otherwise
+    Write("Sum is small")
+End If
+
+// 6. Loop
+Make counter = 0
+While counter is less than 3
+    Write("Loop iteration: " plus counter)
+    Make counter = counter plus 1
+End While
+
+// 7. Function
+Make greet with userName
+    Make greeting = "Welcome, " plus userName plus "!"
+    Write(greeting)
+End
+
+// Test function
+Use greet with "VS Code User"
+
+Write("✅ All extension features tested successfully!")
+
+End Program
