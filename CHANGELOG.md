@@ -1,164 +1,166 @@
-# Changelog
+# Change Log
 
-All notable changes to the PohLang Hub VS Code extension will be documented in this file.
+All notable changes to the PohLang VS Code extension will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.1] - 2025-10-09
+## [0.6.6] - 2025-10-23
+
+### Changed - Runtime v0.6.6 Support
+- Updated for PohLang Runtime v0.6.6 with Phase 8 Optimizations Complete
+- Version synchronized with PohLang runtime for clarity
+
+### Runtime Features (v0.6.6)
+- **Inline Caching**: 256-slot cache for fast global variable access
+- **Enhanced Error Messages**: Source line number tracking for better debugging  
+- **VM Statistics**: Comprehensive profiling with \--stats\ flag
+- **Optimizations**: Constant folding, instruction fusion, dead code elimination
+- **Performance**: Significant speedup through advanced VM optimizations
+
+### Language Support Features
+- Syntax highlighting for all PohLang constructs
+- IntelliSense and code completion
+- 50+ code snippets for faster coding
+- Error detection and validation
+- Symbol navigation and outline
+
+### Notes
+- This extension provides LANGUAGE SUPPORT ONLY (syntax, IntelliSense, snippets)
+- For runtime execution, project management, and SDK tools, install the **PLHub** extension
+- Both extensions work together for the complete PohLang development experience
+- Fully backward compatible with previous PohLang versions
+
+### Version Alignment
+- PohLang Language Extension: v0.6.6
+- PohLang Runtime: v0.6.6
+- PLHub SDK: v0.6.0
+- PLHub Extension: v0.2.5
+
+---
+
+
+## [0.3.2] - 2025-10-12
+
+### Fixed - Critical: Removed Runtime Commands
+- **REMOVED all runtime commands**: No more pohlang.runFile, pohlang.createProject, etc.
+- **REMOVED all menus**: Context menus and command palette entries removed
+- **REMOVED all keybindings**: Ctrl+F5 now handled by PLHub extension only
+- **REMOVED all configuration**: SDK settings moved to PLHub extension
+- **This extension is now PURELY language support** (syntax, IntelliSense, snippets)
+
+### Why This Change?
+- Previous version had duplicate commands that conflicted with PLHub extension
+- Error: "command 'pohlang.runFile' not found" when trying to run files
+- Language extension should ONLY provide language features, not runtime execution
+- All runtime features now exclusively in PLHub extension
+
+### What This Means
+- **Language Extension**: Syntax highlighting + IntelliSense ONLY
+- **PLHub Extension**: ALL runtime commands (required for execution)
+- **Both needed**: Install both extensions for full functionality
+
+---
+All notable changes to the PohLang VS Code extension will be documented in this file.
+
+## [0.3.1] - 2025-10-12
+
+### Changed - Runtime v0.6.0 Support
+- **Updated for PohLang v0.6.0**: Full support for latest runtime features
+- **Phase 8 Optimizations**: Compatible with bytecode VM optimizations
+- **Enhanced Error Messages**: Supports new error format with instruction pointers and suggestions
+- **Better Performance**: Works with optimized runtime (5-10x faster)
+
+### Technical Details
+- Runtime compatibility: PohLang v0.6.0
+- Phase 8 features: Constant folding, instruction fusion, peephole optimization, inline caching, enhanced errors
+- Extension version: 0.3.1
+- Language support remains unchanged (syntax highlighting, IntelliSense, etc.)
+
+---
+# Change Log
+
+All notable changes to the PohLang VS Code extension will be documented in this file.
+
+## [0.2.5] - 2025-10-11
+
+### Added
+- **🎯 Hover Information Provider** - Hover over keywords, functions, and variables to see documentation
+  - Comprehensive documentation for 30+ keywords (Start, End, Make, Set, If, While, etc.)
+  - Phrasal expression documentation (plus, minus, times, divided by, etc.)
+  - File I/O operation docs (Phase 6 features)
+  - Examples and syntax guides in hover tooltips
+- **🔍 Signature Help Provider** - Parameter hints when typing function calls
+  - Shows parameter names and descriptions while typing
+  - Supports built-in phrasal expressions (join, split, contains, etc.)
+  - Works with user-defined functions
+- **✅ Enhanced Diagnostics** - Real-time error detection in Problems panel
+  - Parses actual PohLang runtime error output
+  - Multiple error format support (Error:, Error at line X:, Could not parse, etc.)
+  - Shows errors, warnings, and hints with proper severity levels
+  - Automatic validation on file change and save
+- **💡 Improved IntelliSense** - Better code completion triggers
+  - Now triggers on newline for better statement completion
+  - Enhanced completion context awareness
+
+### Changed
+- **Diagnostics System** - Now validates using actual PohLang interpreter output instead of mock syntax checking
+- **Error Messages** - Better error message parsing with line number detection
+- **Completion Triggers** - Added newline trigger for improved suggestion experience
 
 ### Fixed
-- Verified TypeScript compilation produces no errors
-- Confirmed runtime binary v0.5.2 properly bundled in `bin/` directory
-- Validated all 5 commands work correctly with latest PLHub
-
-### Improved
-- Updated documentation with comprehensive verification results
-- Confirmed all 38 code snippets working correctly
-- Validated syntax highlighting for all PohLang v0.5.2 features including 20 phrasal expressions
-- Extension packages successfully as `.vsix` file
-
-### Testing
-- ✅ Full stack validation completed (see `VERIFICATION_REPORT.md`)
-- ✅ All commands tested and functional (Run File, Create Project, Update Language, etc.)
-- ✅ Extension compiles and packages successfully
-- ✅ Runtime detection works across multiple locations (extension bin/, workspace, PATH)
+- Problems panel now shows actual PohLang errors instead of basic syntax checks
+- Inline suggestions work correctly for all PohLang constructs
+- Error line numbers correctly mapped to editor positions
 
 ### Technical
-- TypeScript compilation: Clean, no errors
-- ESLint: No linting issues
-- Bundle size: Optimized with proper `.vscodeignore`
-
-## [Unreleased]
-
-### Planned
-- Advanced debugging support
-- Interactive PohLang REPL
-- Code formatting and refactoring tools
-- Integration with package managers
-- Performance profiling tools
-
-## [0.1.0] - 2025-09-21
-
-- **IntelliSense**: Smart completions for keywords, functions, variables, and all 20 phrasal expressions- Code snippets for common PohLang patterns
-
-- **Rust Runtime Integration**: Execute `.poh` files with fast compiled Rust runtime (v0.5.2)- IntelliSense and autocompletion support
-
-- **Automatic Runtime Detection**: Searches extension, workspace, development directories, and PATH- Three main commands:
-
-- **Commands**:  - **PL-Hub: Run File** - Execute current .poh file
-
-  - `PL-Hub: Run File` (Ctrl+F5) - Execute current .poh file  - **PL-Hub: Create Project** - Scaffold new PohLang projects  
-
-  - `PL-Hub: Create Project` - Scaffold new PohLang projects with v0.5.2 templates  - **PL-Hub: Update Language** - Update interpreter binary
-
-  - `PL-Hub: Update Language` - Download and install latest runtime- Real-time diagnostics and error reporting
-
-  - `PL-Hub: Run Environment Example` - Test installation- Integrated terminal output for code execution
-
-  - `PL-Hub: Show SDK Versions` - Display installed versions- Project scaffolding with templates
-
-- **Configuration Settings**:- Placeholder PohLang interpreter binary
-
-  - `pohlangHub.pohlangRepo` - GitHub repository for releases- Language configuration with proper comment support
-
-  - `pohlangHub.plhubRepo` - PL-Hub SDK repository- File association for `.poh` files
-
-  - `pohlangHub.autoUpdate` - Automatic update checking
-
-  - `pohlangHub.updateIntervalDays` - Update check frequency### Language Features
-
-  - `pohlangHub.sdkTagOverride` - Pin to specific version- Keywords: `make`, `set`, `to`, `function`, `if`, `else`, `while`, `for`, etc.
-
-  - `pohlangHub.githubToken` - Optional token for API rate limits- Operators: `plus`, `minus`, `times`, `divided by`, `equals`, etc.
-
-- Built-in functions: `print`, `input`, `length`, `type`, `convert`
-
-### Changed- Data types: strings, numbers, booleans, null
-
-- Updated syntax highlighting from old Python-based syntax to PohLang v0.5.2 Rust syntax- Control structures: conditionals, loops, functions
-
-- Changed function syntax from `make function name:` to `Make name with param:` / `Make name:`- Comments: single-line (`#`) and block (`#* *#`)
-
-- Updated variable syntax from `set variable to value` to `Make variable = value`
-
-- Changed conditional from `if...else` to `If...Otherwise...End If`### Code Snippets
-
-- Updated loops from lowercase to capitalized: `While...End While`, `Repeat...End`- `func` - Create function
-
-- Changed I/O functions from `print` / `input` to `Write` / `Ask for`- `main` - Main function template
-
-- Updated project templates to use v0.5.2 syntax with phrasal expressions- `set` - Variable assignment
-
-- Modified completion provider to suggest v0.5.2 constructs- `var` - Variable declaration
-
-- Updated snippets to match modern PohLang syntax- `if`/`ifelse` - Conditional statements
-
-- `while`/`for` - Loop structures
-
-### Fixed- `print` - Print statement
-
-- Runtime detection now uses `--run` flag for Rust runtime (v0.5.2)- `input` - Input statement
-
-- File execution properly spawns pohlang.exe with correct arguments- Arithmetic operations (`add`, `sub`, `mul`, `div`)
-
-- IntelliSense now provides accurate completions for current language version
-
-### Technical Implementation
-
-### Technical Details- TypeScript-based extension
-
-- Extension ID: `pohlang.pohlang-hub`- Node.js child process integration for interpreter execution
-
-- Minimum VS Code version: 1.70.0- VS Code language server protocol compliance
-
-- Language ID: `pohlang`- Comprehensive error handling and validation
-
-- File extensions: `.poh`- Cross-platform compatibility (Windows, macOS, Linux)
-
-- Runtime: PohLang v0.5.2 (Rust-compiled)- Modular architecture with separated concerns
-
-
-
-## [Unreleased]### Documentation
-
-- Complete README with usage instructions
-
-### Planned- Code examples and getting started guide
-
-- Hover documentation for phrasal expressions- API documentation for extension development
-
-- Go to definition for functions and variables- Contributing guidelines
-
-- Find all references- MIT license
-
-- Rename symbol refactoring
-
-- Code formatting provider### Development Tools
-
-- Debugger integration- TypeScript compilation setup
-
-- Interactive playground- ESLint configuration
-
-- More example projects- Build and packaging scripts
-
-- VS Code launch configuration for debugging
-
----- Extension development host support
-
-
-
-For full documentation, visit: https://github.com/pohlang/pohlang-hub---
-
-
-## Version Schema
-
-- **Major** (X.0.0): Breaking changes, major new features
-- **Minor** (0.X.0): New features, backwards compatible
-- **Patch** (0.0.X): Bug fixes, small improvements
-
-## Support
-
-For questions, issues, or feature requests:
-- [GitHub Issues](https://github.com/pohlang/pohlang-hub/issues)
-- [GitHub Discussions](https://github.com/pohlang/pohlang-hub/discussions)
+- Added `hover.ts` - Comprehensive hover documentation provider
+- Added `signatureHelp.ts` - Function parameter hint provider  
+- Enhanced `diagnostics.ts` - Real PohLang error output parsing
+- Updated `extension.ts` - Registered new language providers
+- ~400 lines of new language server features
+
+## [0.2.0] - 2025-10-10
+
+### Added
+- **PohLang Runtime v0.5.4** - Updated bundled runtime with Phase 5 error handling
+- **Error Handling Support** - Full support for try/catch/finally syntax
+  - `try this:` blocks
+  - `if error` / `if error as variable` catch handlers
+  - `if error of type "ErrorType"` type-specific catching
+  - `finally:` cleanup blocks
+  - `end try` block terminator
+- **Error Types** - 7 built-in error types: RuntimeError, TypeError, MathError, FileError, JsonError, NetworkError, ValidationError
+- **Custom Errors** - Create and throw custom error types
+- **Natural Error Messages** - English-like error messages with file location reporting
+- **Error Operations** - `error of type X with message Y`, `error message of`, `error type of`
+
+### Changed
+- Updated runtime from v0.5.2 to v0.5.4
+- Enhanced description with error handling features
+- Version bump to 0.2.0 (minor version for new features)
+
+### Technical
+- Runtime binary updated with ~450 lines of error handling code
+- Compatible with all existing v0.5.2 programs (fully backward compatible)
+- File location reporting in error messages
+
+## [0.1.1] - 2025-10-05
+
+### Added
+- Initial release with PohLang v0.5.2 runtime
+- Syntax highlighting for `.poh` files
+- IntelliSense with 40+ code snippets
+- Bundled Rust runtime (no separate download needed)
+- One-click execution with Ctrl+F5
+- Support for all Phase 1 features:
+  - Statements: Write, Ask for, Set, Increase, Decrease, Return
+  - Control flow: If/Otherwise, While, Repeat loops
+  - Functions with parameters and default values
+  - Collections: Lists and Dictionaries
+  - 20 phrasal built-in expressions
+  - Symbolic operators (+, -, *, /, >, <, ==, !=)
+
+### Features
+- Complete IDE experience in VS Code
+- Local operation (works offline)
+- Cross-platform support
+- Integrated terminal execution
