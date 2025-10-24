@@ -1,28 +1,39 @@
-# PohLang Hub - VS Code Extension# PohLang Hub - VS Code Extension
+# PohLang Hub - VS Code Extension
 
+![Version](https://img.shields.io/badge/version-0.3.1-blue.svg)
+![PohLang](https://img.shields.io/badge/PohLang-v0.6.0-success.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+The official Visual Studio Code extension for **PohLang v0.6.0** - a human-friendly programming language powered by a Rust runtime that bridges the gap between natural language and code.
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
+> **PohLang - Programming that reads like prose**
 
-![PohLang](https://img.shields.io/badge/PohLang-v0.5.2-success.svg)![PohLang](https://img.shields.io/badge/PohLang-v0.5.2-success.svg)
+🎮 **Try PohLang Online**: [PohLang Playground](https://pohlang-playground.pages.dev) - Write and run PohLang code in your browser!
 
-![License](https://img.shields.io/badge/license-MIT-green.svg)![License](https://img.shields.io/badge/license-MIT-green.svg)
+## ✨ What's New in v0.3.1
 
+### 🎯 Phase 5: Error Handling (NEW!)
+- **Try/Catch/Finally** - Natural English error handling
+- **7 Built-in Error Types** - RuntimeError, TypeError, MathError, FileError, JsonError, NetworkError, ValidationError
+- **Custom Errors** - Create your own error types
+- **Type-Specific Catching** - `if error of type "FileError" as err`
+- **Natural Error Messages** - English-like error messages with file location
+- **Error Operations** - Create, throw, and inspect errors
 
+```pohlang
+try this:
+    Set result to 10 divided by 0
+if error of type "MathError" as e
+    Write "Math error occurred: "
+    Write e
+finally:
+    Write "Cleanup always runs"
+end try
+```
 
-The official Visual Studio Code extension for **PohLang v0.5.2** - a human-friendly programming language powered by a Rust runtime that bridges the gap between natural language and code.The official Visual Studio Code extension for **PohLang v0.5.2** - a human-friendly programming language powered by a Rust runtime that bridges the gap between natural language and code.
+## 🚀 Features
 
-
-
-> **PohLang - Programming that reads like prose**> **PohLang - Programming that reads like prose**
-
-
-
-## ✨ Features## Features
-
-
-
-### 🎨 Full PohLang v0.5.2 Syntax Support### 🎨 Syntax Highlighting
+### 🎨 Full PohLang v0.5.4 Syntax Support### 🎨 Syntax Highlighting
 
 - Program blocks (`Start Program` / `End Program`)- Full syntax highlighting for PohLang (`.poh`) files
 
@@ -286,9 +297,9 @@ Access via Command Palette (`Ctrl+Shift+P`):```bash
 
 # Clone the repository
 
-- **PL-Hub: Run File** (`Ctrl+F5`) - Execute current `.poh` filegit clone https://github.com/pohlang/pohlang-hub.git
+- **PL-Hub: Run File** (`Ctrl+F5`) - Execute current `.poh` filegit clone https://github.com/pohlang/pohlang.git
 
-- **PL-Hub: Create Project** - Scaffold new PohLang projectcd pohlang-hub
+- **PL-Hub: Create Project** - Scaffold new PohLang projectcd pohlang
 
 - **PL-Hub: Update Language** - Download latest runtime
 
@@ -354,9 +365,9 @@ npm test
 
 - [Examples](https://github.com/AlhaqGH/PohLang/tree/main/examples/poh)
 
-- [GitHub](https://github.com/pohlang/pohlang-hub)```
+- [GitHub](https://github.com/pohlang/pohlang)```
 
-pohlang-hub/
+pohlang/
 
 ## 📋 Release Notes├── src/
 
@@ -390,7 +401,7 @@ MIT License - see [LICENSE](LICENSE)│   └── pohlang.tmLanguage.json
 
 ├── bin/
 
-- [Issues](https://github.com/pohlang/pohlang-hub/issues)│   └── pohlang              # Interpreter binary
+- [Issues](https://github.com/pohlang/pohlang/issues)│   └── pohlang              # Interpreter binary
 
 - [Discussions](https://github.com/AlhaqGH/PohLang/discussions)├── package.json
 
@@ -417,9 +428,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- [Issues](https://github.com/pohlang/pohlang-hub/issues)
-- [Discussions](https://github.com/pohlang/pohlang-hub/discussions)
-- [Documentation](https://github.com/pohlang/pohlang-hub/wiki)
+- [Issues](https://github.com/pohlang/pohlang/issues)
+- [Discussions](https://github.com/pohlang/pohlang/discussions)
+- [Documentation](https://github.com/pohlang/pohlang/wiki)
 
 ## Changelog
 
